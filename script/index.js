@@ -104,7 +104,7 @@ function onTabClick(name) {
 
   //sets the page to the html file
   console.log(currentPath.slice(0, currentPath.length).join("/"));
-  mainContent.innerHTML = `<iframe class="tab_page" type="text/html" src="../pages/${currentPath.join("/")}.html"></iframe>`;
+  mainContent.innerHTML = `<iframe class="tab_page" type="text/html" src="./pages/${currentPath.join("/")}.html"></iframe>`;
 }
 
 function getRecursive(path) {
