@@ -1,35 +1,35 @@
 {
   "Main": {},
   "Characters": {
-    "Cadence": {
-      "tab1tab1tab1": {},
-      "tab1tab1tab2": {}
+    "Cadence": {},
+    "Melody": {},
+    "Aria": {},
+    "Dorian": {},
+    "Eli": {},
+    "Monk": {},
+    "Dove": {},
+    "Coda": {
+      "best uwu": {}
     },
-    "char2": {
-      "tab1tab2tab1": {
-        "awef11": {
-          "awefawefawef": {}
-        },
-        "awef12": {}
-      },
-      "tab1tab2tab2": {
-        "awefw3awef": {
-          "awc35sebs": {}
-        },
-        "wfc3wt34": {
-          "aw35w34654n": {}
-        }
-      },
-      "tab1tab2tab3": {}
-    },
-    "tab1tab3": {
-      "wleiuvtnsis": {},
-      "lwe48yt8ihs7eh4ib87": {}
-    }
+    "Bolt": {},
+    "Bard": {},
+    "Nocturna": {},
+    "Diamond": {},
+    "Mary": {},
+    "Tempo": {},
+    "Reaper": {},
+    "Klarinetta": {},
+    "Chaunter": {},
+    "Suzu": {},
+    "Hatsune Miku": {}
   },
-  "tab2": {
-    "3453465456457656": {},
-    "tab2tab1213": {}
+  "Zones": {
+    "Zone 1": {},
+    "Zone 2": {},
+    "Zone 3": {},
+    "Zone 4": {},
+    "Zone 5": {}
   },
-  "tab3": {}
+  "Bosses": {},
+  "Enemies": {}
 }

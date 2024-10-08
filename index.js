@@ -13,6 +13,7 @@ setTimeout(() => {
     temp += `<div class="tab_item" onClick="onTabClick('${tempTabName}')">${tempTabName}</div>`;
   }
   mainTabGroup.innerHTML = temp;
+  onTabClick("Main") //on page load go to main
 }, 50);
 
 window.onTabClick = onTabClick;
@@ -103,7 +104,7 @@ function onTabClick(name) {
 
   //sets the page to the html file
   console.log(currentPath.slice(0, currentPath.length).join("/"));
-  mainContent.innerHTML = `<object type="text/html" data="/pages/${currentPath.join("/")}.html"></object>`;
+  mainContent.innerHTML = `<iframe class="tab_page" type="text/html" src="/pages/${currentPath.join("/")}.html"></iframe>`;
 }
 
 function getRecursive(path) {
