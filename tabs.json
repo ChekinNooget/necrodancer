@@ -30,6 +30,18 @@
     "Zone 4": {},
     "Zone 5": {}
   },
-  "Bosses": {},
+  "Bosses": {
+    "King Conga": {},
+    "Death Metal": {},
+    "Deep Blues": {},
+    "Coral Riff": {},
+    "Fortissimole": {},
+    "Dead Ringer": {},
+    "The NecroDancer": {},
+    "Return of the NecroDancer": {},
+    "The Golden Lute": {},
+    "Frankensteinway": {},
+    "The Conductor": {}
+  },
   "Enemies": {}
 }

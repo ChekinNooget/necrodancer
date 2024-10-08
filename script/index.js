@@ -1,4 +1,4 @@
-import data from "./tabs.json" with { type: "json" };
+import data from "../tabs.json" with { type: "json" };
 var selected = "";
 var currentPath = []; //path should be ["thing", "next thing"] all the way to where user is selected like data["thing"]
 
@@ -104,7 +104,7 @@ function onTabClick(name) {
 
   //sets the page to the html file
   console.log(currentPath.slice(0, currentPath.length).join("/"));
-  mainContent.innerHTML = `<iframe class="tab_page" type="text/html" src="./pages/${currentPath.join("/")}.html"></iframe>`;
+  mainContent.innerHTML = `<iframe class="tab_page" type="text/html" src="../pages/${currentPath.join("/")}.html"></iframe>`;
 }
 
 function getRecursive(path) {
