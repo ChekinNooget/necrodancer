@@ -1,4 +1,4 @@
-import data from "tabs.json" with { type: "json" };
+import data from "./tabs.json" with { type: "json" };
 var selected = "";
 var currentPath = []; //path should be ["thing", "next thing"] all the way to where user is selected like data["thing"]
 
