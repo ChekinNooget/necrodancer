@@ -1,4 +1,7 @@
-.center {
-  color: blue;
+.main_content_wrapper {
+  padding: 25px;
 }
-/*figure this out..*/
+.center {
+  display: flex;
+  justify-content: center;
+}

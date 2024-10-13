@@ -64,7 +64,6 @@ function onTabClick(name) {
 
   //console.log(selected);
   var allTabsWrapper = document.querySelector(".top_tabs");
-  var mainContent = document.querySelector(".main_content_wrapper");
   var groupIndex = currentPath.length + 1; //how many rows of things there should be
   var temp = "";
 
@@ -103,8 +102,21 @@ function onTabClick(name) {
   //document.querySelector(`.${selected}`).classList.add("selected")
 
   //sets the page to the html file
-  console.log(currentPath.slice(0, currentPath.length).join("/"));
-  mainContent.innerHTML = `<iframe class="tab_page" type="text/html" src="./pages/${currentPath.join("/")}.html"></iframe>`;
+  //console.log(currentPath.slice(0, currentPath.length).join("/"));
+  
+  var mainContentWrapper = document.querySelector(".main_content_wrapper");
+  mainContentWrapper.innerHTML = `<include class="main_content" src="./pages/${currentPath.join("/")}.html">Loading...</include>`
+  const includes = document.getElementsByTagName('include');
+  [].forEach.call(includes, i => {
+      let filePath = i.getAttribute('src');
+      fetch(filePath).then(file => {
+          file.text().then(content => {
+              i.insertAdjacentHTML('afterend', content);
+              i.remove();
+          });
+      });
+  });
+//mainContent.innerHTML = `<iframe class="tab_page" type="text/html" src="./pages/${currentPath.join("/")}.html"></iframe>`;
 }
 
 function getRecursive(path) {

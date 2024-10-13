@@ -8,9 +8,7 @@
     "Eli": {},
     "Monk": {},
     "Dove": {},
-    "Coda": {
-      "best uwu": {}
-    },
+    "Coda": {},
     "Bolt": {},
     "Bard": {},
     "Nocturna": {},
@@ -43,5 +41,7 @@
     "Frankensteinway": {},
     "The Conductor": {}
   },
-  "Enemies": {}
+  "Enemies": {
+    "Minibosses": {}
+  }
 }
