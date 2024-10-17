@@ -10,3 +10,13 @@
   display: flex;
   justify-content: right;
 }
+
+.tile_header {
+  height: 100px;
+  width: 100vw;
+  position: absolute;
+  left: 0;
+  background-repeat: repeat-x;
+  background-size: contain;
+  background-position: center;
+}

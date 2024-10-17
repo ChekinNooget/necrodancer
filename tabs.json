@@ -29,31 +29,15 @@
     "Zone 5": {}
   },
   "Bosses": {
-    "King Conga": {
-      "Quick Kills": {}
-    },
-    "Death Metal": {
-      "Quick Kills": {}
-    },
-    "Deep Blues": {
-      "Quick Kills": {}
-    },
-    "Coral Riff": {
-      "Quick Kills": {}
-    },
-    "Fortissimole": {
-      "Quick Kills": {}
-    },
-    "Dead Ringer": {
-      "Quick Kills": {}
-    },
-    "The NecroDancer": {
-      "Quick Kills": {}
-    },
+    "King Conga": {},
+    "Death Metal": {},
+    "Deep Blues": {},
+    "Coral Riff": {},
+    "Fortissimole": {},
+    "Dead Ringer": {},
+    "The NecroDancer": {},
     "Return of the NecroDancer": {},
-    "The Golden Lute": {
-      "Quick Kill": {}
-    },
+    "The Golden Lute": {},
     "Frankensteinway": {},
     "The Conductor": {}
   },
