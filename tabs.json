@@ -29,19 +29,54 @@
     "Zone 5": {}
   },
   "Bosses": {
-    "King Conga": {},
-    "Death Metal": {},
-    "Deep Blues": {},
-    "Coral Riff": {},
-    "Fortissimole": {},
-    "Dead Ringer": {},
-    "The NecroDancer": {},
+    "King Conga": {
+      "Quick Kills": {}
+    },
+    "Death Metal": {
+      "Quick Kills": {}
+    },
+    "Deep Blues": {
+      "Quick Kills": {}
+    },
+    "Coral Riff": {
+      "Quick Kills": {}
+    },
+    "Fortissimole": {
+      "Quick Kills": {}
+    },
+    "Dead Ringer": {
+      "Quick Kills": {}
+    },
+    "The NecroDancer": {
+      "Quick Kills": {}
+    },
     "Return of the NecroDancer": {},
-    "The Golden Lute": {},
+    "The Golden Lute": {
+      "Quick Kill": {}
+    },
     "Frankensteinway": {},
     "The Conductor": {}
   },
   "Enemies": {
-    "Minibosses": {}
-  }
+    "Zone 1": {},
+    "Zone 2": {},
+    "Zone 3": {},
+    "Zone 4": {},
+    "Zone 5": {},
+    "Minibosses": {
+      "Direbat": {},
+      "Minotaur": {},
+      "Dragons": {},
+      "Nightmare": {},
+      "Banshee": {},
+      "Ogre": {},
+      "Metrognome": {}
+    }
+  },
+  "Shrines and Items": {
+    "Shrines": {},
+    "Items": {}
+  },
+  "Extra Modes": {},
+  "Game Mechanics": {}
 }

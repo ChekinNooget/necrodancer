@@ -2,26 +2,22 @@ import data from "../tabs.json" with { type: "json" };
 var selected = "";
 var currentPath = []; //path should be ["thing", "next thing"] all the way to where user is selected like data["thing"]
 
-setTimeout(() => {
-  //change this away from timeout lol
+window.addEventListener('load', function () {
   var mainTabGroup = document.querySelector(".tab_group_1");
   console.log(Object.values(data));
   var temp = "";
-  //this barely works. need to make it recursive and check for list
   for (let i = 0; i < Object.keys(data).length; i++) {
     var tempTabName = Object.keys(data)[i];
     temp += `<div class="tab_item" onClick="onTabClick('${tempTabName}')">${tempTabName}</div>`;
   }
   mainTabGroup.innerHTML = temp;
-  onTabClick("Main") //on page load go to main
-}, 50);
+  onTabClick("Main") //on page load go to main. change this to the ?path=awef thing eventually
+})
 
 window.onTabClick = onTabClick;
 function onTabClick(name) {
   selected = name;
   console.log("");
-  //console.log("current path", currentPath);
-  //console.log("selected", selected);
   if (getRecursive(currentPath.concat(selected)) != false) {
     currentPath = currentPath.concat(selected);
   } else if (getRecursive(currentPath.concat(selected)).length == 0) {
@@ -56,13 +52,7 @@ function onTabClick(name) {
     }
     console.log("currentpath", currentPath)
   }
-  //console.log("get recursive", getRecursive(currentPath.concat(selected)));
- // console.log("get recursive no concat", getRecursive(currentPath));
-
-  //kil lme now
-  //ugh
-
-  //console.log(selected);
+  
   var allTabsWrapper = document.querySelector(".top_tabs");
   var groupIndex = currentPath.length + 1; //how many rows of things there should be
   var temp = "";
@@ -98,12 +88,7 @@ function onTabClick(name) {
       a.classList.add("was_selected");
     }
   }
-  //console.log(document.querySelector(`.${selected}`).classList)
-  //document.querySelector(`.${selected}`).classList.add("selected")
 
-  //sets the page to the html file
-  //console.log(currentPath.slice(0, currentPath.length).join("/"));
-  
   var mainContentWrapper = document.querySelector(".main_content_wrapper");
   mainContentWrapper.innerHTML = `<include class="main_content" src="./pages/${currentPath.join("/")}.html">Loading...</include>`
   const includes = document.getElementsByTagName('include');
@@ -116,7 +101,6 @@ function onTabClick(name) {
           });
       });
   });
-//mainContent.innerHTML = `<iframe class="tab_page" type="text/html" src="./pages/${currentPath.join("/")}.html"></iframe>`;
 }
 
 function getRecursive(path) {
@@ -124,8 +108,6 @@ function getRecursive(path) {
   for (let i = 0; i < path.length; i++) {
     tempString = tempString + `['${path[i]}']`;
   }
-  //console.log(eval(`data${tempString}`))
-  //console.log(eval(`Object.keys(data${tempString})`));
   try {
     if (eval(`data${tempString}`)) {
     }
