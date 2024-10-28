@@ -114,6 +114,8 @@ function onTabClick(name) {
 			});
 		});
 	});
+
+    //loadImages() do this eventually
 }
 
 function getRecursive(path) {
