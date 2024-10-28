@@ -1,49 +1,49 @@
 :root {
-  --background: gray;
+	--background: gray;
 }
 
 body {
-  margin: 0px;
-  height: 100vh;
-  background-color: antiquewhite;
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  background-color: darkgray;
+	margin: 0px;
+	height: 100vh;
+	background-color: antiquewhite;
+	font-family: "Lato", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	background-color: darkgray;
 }
 
 .tab_group {
-  display: flex;
-  flex-wrap: wrap;
-  padding-bottom: 10px;
-  justify-content: center;
+	display: flex;
+	flex-wrap: wrap;
+	padding-bottom: 10px;
+	justify-content: center;
 }
 .tab_item {
-  background-color: var(--background);
-  width: 100%;
-  height: 20px;
-  overflow: hidden;
-  white-space: nowrap;
+	background-color: var(--background);
+	width: 100%;
+	height: 20px;
+	overflow: hidden;
+	white-space: nowrap;
 
-  padding: 5px;
-  border: 1px solid black;
-  margin: 0px;
-  cursor: pointer;
-  border: 1px black solid;
-  min-width: calc(20% - 12px);
-  width: min-content;
+	padding: 5px;
+	border: 1px solid black;
+	margin: 0px;
+	cursor: pointer;
+	border: 1px black solid;
+	min-width: calc(20% - 12px);
+	width: min-content;
 
-  display: flex;
-  flex-grow: 1;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
+	display: flex;
+	flex-grow: 1;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
 }
 .tab_item.selected {
-  background-color: white;
+	background-color: white;
 }
 .was_selected {
-  background-color: lightgray;
+	background-color: lightgray;
 }
 
 /*.tab_page {
@@ -53,10 +53,10 @@ body {
 }*/
 
 .footer {
-  position: absolute;
-  bottom: 0px;
-  height: 50px;
-  padding: 5px;
-  background-color: var(--background);
-  width: calc(100% - 10px);
+	position: absolute;
+	bottom: 0px;
+	height: 50px;
+	padding: 5px;
+	background-color: var(--background);
+	width: calc(100% - 10px);
 }
