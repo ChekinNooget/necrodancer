@@ -1,8 +1,11 @@
 .main_content_wrapper {
-  background-color: rgb(236, 219, 197);
   margin: 20px;
   padding: 35px;
 
+  background-color: black;
+  color: white;
+
+  /*border around the page*/
   background-image: url("../images/ui/border_corner1.png"), url("../images/ui/border_corner2.png"), url("../images/ui/border_corner3.png"),
     url("../images/ui/border_corner4.png"), url("../images/ui/border_top.png"), url("../images/ui/border_right.png"), url("../images/ui/border_bottom.png"),
     url("../images/ui/border_left.png");
@@ -10,15 +13,13 @@
   background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, repeat-x, repeat-y, repeat-x, repeat-y;
   background-size: 24px, 24px, 24px, 24px, inherit, inherit, inherit, inherit;
   image-rendering: pixelated;
-
-  background-color: black;
-  color: white;
 }
 
 .center {
   display: flex;
   justify-content: center;
 }
+
 .right {
   display: flex;
   justify-content: right;
@@ -26,9 +27,6 @@
 
 .tile_header {
   height: 100px;
-  width: 100vw;
-  position: absolute;
-  left: 0;
   background-repeat: repeat-x;
   background-size: contain;
   background-position: center;

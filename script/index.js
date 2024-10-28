@@ -11,7 +11,18 @@ window.addEventListener("load", function () {
     temp += `<div class="tab_item" onClick="onTabClick('${tempTabName}')">${tempTabName}</div>`;
   }
   mainTabGroup.innerHTML = temp;
-  onTabClick("Main"); //on page load go to main. change this to the ?path=awef thing eventually
+
+  const url = new URL(window.location);
+  if (url.searchParams.get("path") != null) {
+    var pastPath = url.searchParams.get("path").split("-");
+    for (let i = 0; i < pastPath.length; i++) {
+      onTabClick(pastPath[i].split("+").join(" "));
+    }
+  } else {
+    onTabClick("Main");
+  }
+
+  //onTabClick("Main"); //on page load go to main. change this to the ?path=awef thing eventually
 });
 
 window.onTabClick = onTabClick;
@@ -58,19 +69,7 @@ function onTabClick(name) {
   var allTabsWrapper = document.querySelector(".top_tabs");
   //var groupIndex = currentPath.length + 1; //how many rows of things there should be
   var temp = "";
-  var newTabGroup = ""
-
-  /* ?? why do i have this chunk of code here
-  for (let i = 0; i < getRecursive(currentPath).length; i++) {
-    var tempTabName = getRecursive(currentPath)[i];
-    temp += `<div class="tab_item" onClick="onTabClick('${tempTabName}')">${tempTabName}</div>`;
-  }
-  if (!document.querySelector(`.tab_group_${groupIndex}`)) {
-    newTabGroup = `<div class="tab_group_${groupIndex} tab_group">${temp}</div>`;
-  }
-  allTabsWrapper.innerHTML = allTabsWrapper.innerHTML + newTabGroup;*/
-
-  //new stuff
+  var newTabGroup = "";
 
   allTabsWrapper.innerHTML = "";
   for (let i = 0; i < currentPath.length + 1; i++) {
@@ -82,8 +81,8 @@ function onTabClick(name) {
     }
 
     //add a group of tabs for each "layer" in the json that the user can see
-    var newTabGroup = ""
-    if (temp != "" || i != currentPath.length){
+    var newTabGroup = "";
+    if (temp != "" || i != currentPath.length) {
       newTabGroup = `<div class="tab_group_${i} tab_group">${temp}</div>`;
     }
 
@@ -100,6 +99,14 @@ function onTabClick(name) {
     }
   }
 
+  //this changes the url "path" parameter to selected
+  var endingParamString = currentPath.join("-");
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.get("path") != endingParamString || urlParams.get("path") == null) {
+    urlParams.set("path", endingParamString);
+    window.history.replaceState(null, null, "?" + urlParams);
+  }
+
   //this is the part that changes the page to the tab selected
   var mainContentWrapper = document.querySelector(".main_content_wrapper");
   mainContentWrapper.innerHTML = `<include class="main_content" src="./pages/${currentPath.join("/")}.html">Loading...</include>`;
@@ -108,8 +115,10 @@ function onTabClick(name) {
     let filePath = i.getAttribute("src");
     fetch(filePath).then((file) => {
       file.text().then((content) => {
-        i.insertAdjacentHTML("afterend", content);
-        i.remove();
+        if (i.parentElement != null) {
+          i.insertAdjacentHTML("afterend", content);
+          i.remove();
+        }
       });
     });
   });
