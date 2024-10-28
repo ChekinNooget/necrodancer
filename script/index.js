@@ -4,7 +4,6 @@ var currentPath = []; //path should be ["thing", "next thing"] all the way to wh
 
 window.addEventListener("load", function () {
 	var mainTabGroup = document.querySelector(".tab_group_1");
-	//console.log(Object.values(data));
 	var temp = "";
 	for (let i = 0; i < Object.keys(data).length; i++) {
 		var tempTabName = Object.keys(data)[i];
@@ -28,7 +27,6 @@ window.addEventListener("load", function () {
 window.onTabClick = onTabClick;
 function onTabClick(name) {
 	selected = name;
-	//console.log("");
 	if (getRecursive(currentPath.concat(selected)) != false) {
 		currentPath = currentPath.concat(selected);
 	} else if (getRecursive(currentPath.concat(selected)).length == 0) {
@@ -41,7 +39,6 @@ function onTabClick(name) {
 			for (const a of document.querySelectorAll(".tab_item")) {
 				if (a.textContent == tempFind) {
 					tempFound = true;
-					//console.log(`.tab_group_${a.parentElement.className.split("tab_group_")[1].split(" ")[0]}`);
 
 					if (a.parentElement.className.split("tab_group_")[1].split(" ")[0] == 0) {
 						tempFound = false;
@@ -52,22 +49,17 @@ function onTabClick(name) {
 						.querySelector(`.tab_group_${a.parentElement.className.split("tab_group_")[1].split(" ")[0] - 1}`)
 						.querySelector(".was_selected").textContent;
 
-					//console.log(tempFind);
-
 					currentPath.unshift(tempFind);
 					break;
 				}
 			}
 			if (!tempFound) {
-				//console.log("tempfind", tempFind);
 				break;
 			}
 		}
-		//console.log("currentpath", currentPath);
 	}
 
 	var allTabsWrapper = document.querySelector(".top_tabs");
-	//var groupIndex = currentPath.length + 1; //how many rows of things there should be
 	var temp = "";
 	var newTabGroup = "";
 
@@ -130,9 +122,7 @@ function getRecursive(path) {
 		tempString = tempString + `['${path[i]}']`;
 	}
 	try {
-		if (eval(`data${tempString}`)) {
-		}
-		eval(`Object.keys(data${tempString})`);
+        eval(`Object.keys(data${tempString})`);
 		return eval(`Object.keys(data${tempString})`);
 	} catch (err) {
 		return false;
