@@ -1,11 +1,11 @@
-import data from "../tabs.json" with { type: "json" };
+var data = pages;
 var selected = "";
 var currentPath = []; //path should be ["thing", "next thing"] all the way to where user is selected like data["thing"]
 
 window.addEventListener("load", function () {
 	var mainTabGroup = document.querySelector(".tab_group_1");
 	var temp = "";
-	for (let i = 0; i < Object.keys(data).length; i++) {
+	for (let i = 0; i < Object.keys(data).vlength; i++) {
 		var tempTabName = Object.keys(data)[i];
 		temp += `<div class="tab_item" onClick="onTabClick('${tempTabName}')">${tempTabName}</div>`;
 	}
@@ -24,7 +24,6 @@ window.addEventListener("load", function () {
 	}
 });
 
-window.onTabClick = onTabClick;
 function onTabClick(name) {
 	selected = name;
 	if (getRecursive(currentPath.concat(selected)) != false) {
@@ -115,7 +114,7 @@ function onTabClick(name) {
 		});
 	});
 
-    //loadImages() do this eventually
+	//loadImages() do this eventually
 }
 
 function getRecursive(path) {
@@ -124,7 +123,7 @@ function getRecursive(path) {
 		tempString = tempString + `['${path[i]}']`;
 	}
 	try {
-        eval(`Object.keys(data${tempString})`);
+		eval(`Object.keys(data${tempString})`);
 		return eval(`Object.keys(data${tempString})`);
 	} catch (err) {
 		return false;

@@ -1,4 +1,4 @@
-{
+var pages = {
 	"Main": {},
 	"Characters": {
 		"Cadence": {},
