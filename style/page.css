@@ -37,6 +37,15 @@
 	flex-wrap: wrap;
 }
 
+.float_right {
+	float: right;
+	padding: 25px;
+}
+.float_left {
+	float: left;
+	padding: 25px;
+}
+
 .tile_header {
 	height: 100px;
 	background-repeat: repeat-x;
