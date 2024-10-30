@@ -1,4 +1,4 @@
-var data = pages;
+var data = pages; //import this from the other data file
 var selected = "";
 var currentPath = []; //path should be ["thing", "next thing"] all the way to where user is selected like data["thing"]
 
